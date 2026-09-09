@@ -1,6 +1,10 @@
+{% extends "core/base.html" %}
+
+{% block content %}
 <h1>Patient List</lh1>
     <ul>
         {% for patient in patients %}
             <li>{{patient.name}} - age: {{ patient.age}} - Severity: {{patient.severity}}</li>
         {% endfor %}       
-            </ul>     
+            </ul>   
+            {% endblock %}  

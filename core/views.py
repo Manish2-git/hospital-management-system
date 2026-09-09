@@ -3,7 +3,7 @@ from django.shortcuts import render
 from  .models import Patient,  Appointment
 
 def home(request):
-        return HttpResponse("Welcome to the hospital management system!")
+        return render(request, "core/home.html")
 
 def patient_list(request):
         patients = Patient.objects.all()
