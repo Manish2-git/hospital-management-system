@@ -31,8 +31,8 @@ class Patient(models.Model):
         severity = models.IntegerField(choices=SEVERITY_CHOICES, default=3)
 
 class Appointment(models.Model):
-        Patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-        Doctor  = models.ForeignKey(Doctor, on_delete=models.CASCADE)
+        patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+        doctor  = models.ForeignKey(Doctor, on_delete=models.CASCADE)
         date = models.DateField()
         time = models.TimeField()
         reason = models.CharField(max_length=200, blank=True)
