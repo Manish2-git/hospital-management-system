@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h1>🚨Emergency Triage Queue</h1>
+<p>Patients are shown in order of urgency (most critical first).</p>
+<ul>
+    {% for patient in patients %}
+        <li><strong{{patient.name}}</strong> -Severity: {{patient.severity }} (Age:{{ patient.age}})</li>
+    {% endfor %} 
+</ul>
+{% endblock %}       
