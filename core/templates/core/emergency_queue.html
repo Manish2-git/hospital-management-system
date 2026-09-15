@@ -3,9 +3,20 @@
 {% block content %}
 <h1>🚨Emergency Triage Queue</h1>
 <p>Patients are shown in order of urgency (most critical first).</p>
-<ul>
+<table>
+    <tr>
+        <th>Priority</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Severity</th>
+    </tr>
     {% for patient in patients %}
-        <li><strong{{patient.name}}</strong> -Severity: {{patient.severity }} (Age:{{ patient.age}})</li>
-    {% endfor %} 
-</ul>
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ patient.name }}</td>
+        <td>{{ patient.age }}</td>
+        <td>{{ patient.severity }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}       
