@@ -13,6 +13,10 @@
             <td>{{ patient.name }}</td>
             <td>{{ patient.age }}</td>
             <td>{{ patient.severity }} </td>
+            <td>
+                <a href="/patients/{{ patient.id }}/edit/">Edit</a>
+                <a href="/patients/{{ patient.id }}/delete/">Delete</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
